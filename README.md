@@ -11,19 +11,19 @@ Each row represents a census block group, and the target variable is the median 
 
 The dataset contains features that describe:
 
-Location → longitude, latitude
+- Location → longitude, latitude
 
-Income level → median_income
+- Income level → median_income
 
-Housing density & size → total_rooms, households, population
+- Housing density & size → total_rooms, households, population
 
-Neighborhood type → ocean_proximity
+- Neighborhood type → ocean_proximity
 
-Target → median_house_value
+- Target → median_house_value
 
 Although this dataset does not reflect current housing prices, it is widely used for learning and demonstrating Regression Modeling and ML Fundamentals.
 
-## 🧠 Workflow
+# 🧠 Workflow
 
 - Loaded and explored the dataset
 - Built a simple linear regression from scratch
@@ -34,27 +34,27 @@ Although this dataset does not reflect current housing prices, it is widely used
 
 
 
-## 📐 Linear Regression Assumptions
+# 📐 Linear Regression Assumptions
 
 To apply Linear Regression properly, we ensured the five core assumptions were reasonably satisfied:
 
-# Linearity
+## Linearity
 The relationship between median_income and house price was strongly linear.
 Scatter plots confirmed this.
 
-# Independence of Errors
+## Independence of Errors
 Each data row represents a different neighborhood → errors are independent.
 
-# Homoscedasticity
+## Homoscedasticity
 Residual plots revealed increasing variance at higher price levels.
 To fix this, we transformed the target:
 
 y = \log(1 + \text{median_house_value})
 
-# Normality of Errors
+## Normality of Errors
 Log-transformation produced a more symmetric error distribution.
 
-# No Multicollinearity
+## No Multicollinearity
 Raw features like total_rooms, total_bedrooms, households, and population were highly correlated.
 So we engineered:
 
@@ -66,7 +66,7 @@ So we engineered:
 
 These features capture the same information in a more stable and interpretable way.
 
-## 🏗️ Final Features Used
+# 🏗️ Final Features Used
 Feature	Why it matters
 - median_income	Strongest economic predictor of housing value
 - latitude, longitude	Captures geographic pricing patterns
@@ -74,23 +74,23 @@ Feature	Why it matters
 - rooms_per_household	Measures home size & density
 - population_per_household	Measures neighborhood crowding
 
-## ⚙️ Model Training
+# ⚙️ Model Training
 
 We implemented:
 
-# Simple Linear Regression (from scratch)
+## Simple Linear Regression (from scratch)
 to understand weight, bias, gradient descent, and cost minimization.
 
-# Multiple Linear Regression (from scratch)
+## Multiple Linear Regression (from scratch)
 to learn matrix-based training and prediction.
 
-# Ridge Regression
+## Ridge Regression
 to reduce multicollinearity and stabilize model coefficients.
 
-# Lasso Regression
+## Lasso Regression
 to automatically select the most impactful features.
 
-## 📊 Results
+# 📊 Results
 Model	RMSE (log scale)	R² (log scale)
 Linear Regression (GD)	~0.35	~0.61
 Ridge Regression	~0.15	~0.52
