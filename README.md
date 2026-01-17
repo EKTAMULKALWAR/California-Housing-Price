@@ -1,6 +1,9 @@
 # California-Housing-Price
 Linear Regression • Ridge • Lasso • Assumption-Driven Modeling
 
+![Python](https://img.shields.io/badge/python-v3.10-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 This project predicts median house prices for California neighborhoods using a Linear Regression pipeline built from scratch and improved with regularization.
 
 The dataset is the well-known California Housing Prices dataset from Kaggle, derived from the 1990 California census.
