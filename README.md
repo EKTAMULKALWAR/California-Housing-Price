@@ -38,23 +38,23 @@ Although this dataset does not reflect current housing prices, it is widely used
 
 To apply Linear Regression properly, we ensured the five core assumptions were reasonably satisfied:
 
-## Linearity
+1) Linearity
 The relationship between median_income and house price was strongly linear.
 Scatter plots confirmed this.
 
-## Independence of Errors
+2) Independence of Errors
 Each data row represents a different neighborhood → errors are independent.
 
-## Homoscedasticity
+3) Homoscedasticity
 Residual plots revealed increasing variance at higher price levels.
 To fix this, we transformed the target:
 
 y = \log(1 + \text{median_house_value})
 
-## Normality of Errors
+4) Normality of Errors
 Log-transformation produced a more symmetric error distribution.
 
-## No Multicollinearity
+5) No Multicollinearity
 Raw features like total_rooms, total_bedrooms, households, and population were highly correlated.
 So we engineered:
 
@@ -78,22 +78,22 @@ Feature	Why it matters
 
 We implemented:
 
-## Simple Linear Regression (from scratch)
+- Simple Linear Regression (from scratch)
 to understand weight, bias, gradient descent, and cost minimization.
 
-## Multiple Linear Regression (from scratch)
+ - Multiple Linear Regression (from scratch)
 to learn matrix-based training and prediction.
 
-## Ridge Regression
+- Ridge Regression
 to reduce multicollinearity and stabilize model coefficients.
 
-## Lasso Regression
+- Lasso Regression
 to automatically select the most impactful features.
 
 # 📊 Results
 Model	RMSE (log scale)	R² (log scale)
-Linear Regression (GD)	~0.35	~0.61
-Ridge Regression	~0.15	~0.52
-Lasso Regression	~0.15	~0.54
+- Linear Regression (GD)	~0.35	~0.61
+- Ridge Regression	~0.15	~0.52
+- Lasso Regression	~0.15	~0.54
 
 # ➡️ Lasso performed best and selected the most meaningful features.
