@@ -23,83 +23,77 @@ Target → median_house_value
 
 Although this dataset does not reflect current housing prices, it is widely used for learning and demonstrating Regression Modeling and ML Fundamentals.
 
-🧠 Approach
+## 🧠 Workflow
 
-We designed the regression pipeline step-by-step:
+- Loaded and explored the dataset
+- Built a simple linear regression from scratch
+- Applied log transformation on the target
+- Engineered better features
+- Built multiple linear regression
+- Improved the model using Ridge and Lasso
 
-Explored the dataset using correlation heatmaps and scatter plots.
 
-Trained a simple Linear Regression model from scratch using Gradient Descent.
 
-Analyzed residuals to evaluate Linear Regression assumptions.
-
-Applied log transformation on the target to correct heteroscedasticity.
-
-Engineered meaningful ratio-based features to reduce multicollinearity and improve interpretability.
-
-Extended the model to Multiple Linear Regression.
-
-Improved performance using Ridge and Lasso regularization.
-
-📐 Linear Regression Assumptions
+## 📐 Linear Regression Assumptions
 
 To apply Linear Regression properly, we ensured the five core assumptions were reasonably satisfied:
 
-Linearity
+# Linearity
 The relationship between median_income and house price was strongly linear.
 Scatter plots confirmed this.
 
-Independence of Errors
+# Independence of Errors
 Each data row represents a different neighborhood → errors are independent.
 
-Homoscedasticity
+# Homoscedasticity
 Residual plots revealed increasing variance at higher price levels.
 To fix this, we transformed the target:
 
 y = \log(1 + \text{median_house_value})
 
-Normality of Errors
+# Normality of Errors
 Log-transformation produced a more symmetric error distribution.
 
-No Multicollinearity
+# No Multicollinearity
 Raw features like total_rooms, total_bedrooms, households, and population were highly correlated.
 So we engineered:
 
-rooms_per_household
+1) rooms_per_household
 
-bedrooms_per_household
+2) bedrooms_per_household
 
-population_per_household
+3) population_per_household
 
 These features capture the same information in a more stable and interpretable way.
 
-🏗️ Final Features Used
+## 🏗️ Final Features Used
 Feature	Why it matters
-median_income	Strongest economic predictor of housing value
-latitude, longitude	Captures geographic pricing patterns
-ocean_proximity (encoded)	Reflects regional housing demand
-rooms_per_household	Measures home size & density
-population_per_household	Measures neighborhood crowding
-⚙️ Model Training
+- median_income	Strongest economic predictor of housing value
+- latitude, longitude	Captures geographic pricing patterns
+- ocean_proximity (encoded)	Reflects regional housing demand
+- rooms_per_household	Measures home size & density
+- population_per_household	Measures neighborhood crowding
+
+## ⚙️ Model Training
 
 We implemented:
 
-Simple Linear Regression (from scratch)
+# Simple Linear Regression (from scratch)
 to understand weight, bias, gradient descent, and cost minimization.
 
-Multiple Linear Regression (from scratch)
+# Multiple Linear Regression (from scratch)
 to learn matrix-based training and prediction.
 
-Ridge Regression
+# Ridge Regression
 to reduce multicollinearity and stabilize model coefficients.
 
-Lasso Regression
+# Lasso Regression
 to automatically select the most impactful features.
 
-📊 Results
+## 📊 Results
 Model	RMSE (log scale)	R² (log scale)
 Linear Regression (GD)	~0.35	~0.61
 Ridge Regression	~0.15	~0.52
 Lasso Regression	~0.15	~0.54
 
-➡️ Lasso performed best and selected the most meaningful features.
+# ➡️ Lasso performed best and selected the most meaningful features.
