@@ -47,9 +47,7 @@ Each data row represents a different neighborhood → errors are independent.
 
 3) Homoscedasticity
 Residual plots revealed increasing variance at higher price levels.
-To fix this, we transformed the target:
-
-y = \log(1 + \text{median_house_value})
+To fix this, we transformed the target: y = \log(1 + \text{median_house_value})
 
 4) Normality of Errors
 Log-transformation produced a more symmetric error distribution.
@@ -58,11 +56,11 @@ Log-transformation produced a more symmetric error distribution.
 Raw features like total_rooms, total_bedrooms, households, and population were highly correlated.
 So we engineered:
 
-1) rooms_per_household
+- rooms_per_household
 
-2) bedrooms_per_household
+- bedrooms_per_household
 
-3) population_per_household
+- population_per_household
 
 These features capture the same information in a more stable and interpretable way.
 
